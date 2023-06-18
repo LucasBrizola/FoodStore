@@ -51,7 +51,7 @@ public class ClienteService {
 
     public void delete(String cpf) {
         if (clienteRepository.findByCpf(cpf).isPresent()) {
-            this.clienteRepository.deleteById(cpf);
+            this.clienteRepository.deleteByCpf(cpf);
         } else throw new ClienteNotFoundException(cpf);
     }
 
@@ -63,7 +63,7 @@ public class ClienteService {
         return true;
     }
 
-    private Cliente replaceFields(Cliente clienteNew, Cliente clienteOld) {
+    private void replaceFields(Cliente clienteNew, Cliente clienteOld) {
             clienteNew.setCpf(clienteOld.getCpf());
 
         if (clienteNew.getNome() == null) {
@@ -81,9 +81,6 @@ public class ClienteService {
         if (clienteNew.getTelefone() == null) {
             clienteNew.setTelefone(clienteOld.getTelefone());
         }
-
-
-        return clienteNew;
     }
 
 }
