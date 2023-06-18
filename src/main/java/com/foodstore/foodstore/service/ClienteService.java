@@ -35,7 +35,7 @@ public class ClienteService {
                 .orElseThrow(() -> new ClienteNotFoundException(cpf));
     }
 
-    public List<Cliente> list() {
+    public List<Cliente> findAll() {
         List<Cliente> lista = this.clienteRepository.findAll();
         if (lista.isEmpty()) {
             throw (new ClientesEmptyException());
