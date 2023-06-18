@@ -18,6 +18,13 @@ public class Cliente {
 
     public Cliente() {
     }
+    public Cliente(String cpf, String nome, String email, String endereco, String telefone) {
+    this.cpf = cpf;
+    this.nome = nome;
+    this.email = email;
+    this.endereco = endereco;
+    this.telefone = telefone;
+    }
 
     public void setCpf(String cpf) {
         this.cpf = cpf;
