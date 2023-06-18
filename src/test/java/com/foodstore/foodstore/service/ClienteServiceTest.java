@@ -33,7 +33,7 @@ public class ClienteServiceTest {
     private ClienteRepository clienteRepository;
 
     Cliente cliente = new Cliente("02721031080", "Lucas", "lucas@outlook.com", "ipiranga 1000", "51997000000");
-    Cliente cliente2 = new Cliente("02721031080", "Luke", "lucas@outlook.com", "ipiranga 1000", "51997000000");
+    Cliente cliente2 = new Cliente("02721031080", "Luke",null,  "ipiranga 1000", "51997000000");
 
     //save Cliente tests
     @Test
@@ -119,7 +119,7 @@ public class ClienteServiceTest {
             when(clienteRepository.findByCpf(cliente.getCpf())).thenReturn(null);
             return null;
         }).when(clienteRepository).deleteByCpf(cliente.getCpf());
-        clienteRepository.deleteByCpf(cliente.getCpf());
+        clienteService.delete(cliente.getCpf());
         Assert.assertNull(clienteRepository.findByCpf(cliente.getCpf()));
     }
 }
