@@ -2,10 +2,10 @@ package com.foodstore.foodstore.service;
 
 import com.foodstore.foodstore.domain.Cliente;
 import com.foodstore.foodstore.repository.ClienteRepository;
-import com.foodstore.foodstore.service.exception.ClienteMissingValueException;
-import com.foodstore.foodstore.service.exception.ClienteNotFoundException;
-import com.foodstore.foodstore.service.exception.ClienteRepeatedException;
-import com.foodstore.foodstore.service.exception.ClientesEmptyException;
+import com.foodstore.foodstore.service.exception.cliente.ClienteMissingValueException;
+import com.foodstore.foodstore.service.exception.cliente.ClienteNotFoundException;
+import com.foodstore.foodstore.service.exception.cliente.ClienteRepeatedException;
+import com.foodstore.foodstore.service.exception.cliente.ClientesEmptyException;
 import org.junit.Assert;
 import org.junit.Test;
 import org.junit.jupiter.api.DisplayName;
