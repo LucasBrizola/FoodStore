@@ -18,6 +18,9 @@ public class Pedido {
     @Column(nullable = false)
     private double valorTotal;
 
+    @OneToOne(mappedBy = "pedido")
+    private Entrega entrega;
+
     public Pedido(){}
 
     public Pedido(Integer num, Cliente cliente, ArrayList<String> produtos, double valorTotal){
